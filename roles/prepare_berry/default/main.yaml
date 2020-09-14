@@ -1,0 +1,7 @@
+---
+raspi_config_update_packages: True
+raspi_config_expanded_filesystem: True
+raspi_config_memory_split_gpu: 16
+raspi_config_locale: en_US.UTF-8
+raspi_config_timezone: Europe\Moscow
+raspi_config_reboot_max_wait_time: 300

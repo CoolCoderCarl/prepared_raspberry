@@ -1,0 +1,15 @@
+---
+- name: apply raspi-config
+  command: raspi-config --apply-os-config
+
+- name: reboot
+  shell: "sleep 1 && shutdown -r now +1"
+  async: 1
+  poll: 0
+  notify:
+    - wait for reboot
+
+- name: wait for reboot
+  wait_for_connection:
+    delay: "{{ raspi_config_reboot_min_time }}"
+    timeout: "{{ raspi_config_reboot_max_wait_time }}"

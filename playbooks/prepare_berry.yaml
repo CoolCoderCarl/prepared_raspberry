@@ -1,0 +1,7 @@
+---
+- hosts: malina_server
+  gather_facts: yes
+  tasks:
+    - include_role:
+        name: emperor_bot
+...
